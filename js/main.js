@@ -313,11 +313,12 @@
         var animationFrameId;
         var cameras = null;
         var self = this;
-        var gUM = (navigator.getUserMedia ||
+        var gUM = (
+            navigator.mediaDevices.getUserMedia ||
+            navigator.getUserMedia ||
             navigator.webkitGetUserMedia ||
             navigator.mozGetUserMedia ||
-            navigator.msGetUserMedia || 
-            navigator.mediaDevices.getUserMedia || 
+            navigator.msGetUserMedia ||
             null);
         var currentCamera = -1;
 
@@ -444,11 +445,12 @@
         // The canvas is analysed but also displayed to the user.
         var self = this;
         var debug = false;
-        var gUM = (navigator.getUserMedia ||
+        var gUM = (
+            navigator.mediaDevices.getUserMedia ||
+            navigator.getUserMedia ||
             navigator.webkitGetUserMedia ||
             navigator.mozGetUserMedia ||
-            navigator.msGetUserMedia ||
-            navigator.mediaDevices.getUserMedia ||  null);
+            navigator.msGetUserMedia || null);
 
         if (location.hash == "#nogum") gUM = null;
         if (location.hash == "#canvasdebug") debug = true;
