@@ -447,7 +447,8 @@
         var gUM = (navigator.getUserMedia ||
             navigator.webkitGetUserMedia ||
             navigator.mozGetUserMedia ||
-            navigator.msGetUserMedia || null);
+            navigator.msGetUserMedia ||
+            navigator.mediaDevices.getUserMedia ||  null);
 
         if (location.hash == "#nogum") gUM = null;
         if (location.hash == "#canvasdebug") debug = true;
